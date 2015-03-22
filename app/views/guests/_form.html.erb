@@ -85,7 +85,7 @@
               <div class="form_section">
                       <div class="form_row">
                         <div class="checkbox_container left13_full">
-                          <label>Vous arrivez avant la cérémonie à la mairie et souhaitez réserver une table à l'auberge du Château ? (prévoir 15€ par personne et par repas, vin non compris )</label>
+                          <label>Vous arrivez avant la cérémonie à la mairie, vous repartez dimanche soir ou lundi et souhaitez réserver une table à l'auberge du Château ? (prévoir 15€ par personne et par repas, vin non compris )</label>
                         </div>
 
                       <label></label>
@@ -97,6 +97,11 @@
                 <div class="checkbox_container left13">
                 <%= f.check_box :saturday_lunch %>  
                 <%= f.label :saturday_lunch %>
+                </div>
+
+                <div class="checkbox_container left13_last">
+                <%= f.check_box :sunday_dinner %>  
+                <%= f.label :sunday_dinner %>
                 </div>
 
                 <div class="checkbox_container left13_full">

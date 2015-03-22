@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150322195101) do
+ActiveRecord::Schema.define(:version => 20150322215428) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "namespace"
@@ -66,11 +66,13 @@ ActiveRecord::Schema.define(:version => 20150322195101) do
     t.datetime "updated_at",       :null => false
     t.string   "remark"
     t.string   "token"
+    t.boolean  "sunday_dinner"
   end
 
   add_index "guests", ["email"], :name => "index_guests_on_email"
   add_index "guests", ["mobile"], :name => "index_guests_on_mobile"
   add_index "guests", ["name"], :name => "index_guests_on_name"
+  add_index "guests", ["sunday_dinner"], :name => "index_guests_on_sunday_dinner"
   add_index "guests", ["token"], :name => "index_guests_on_token"
 
 end

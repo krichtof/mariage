@@ -1,7 +1,7 @@
 class Guest < ActiveRecord::Base
   attr_accessible :arriving, :arriving_day, :departing, :departing_day, :email, 
     :friday_dinner, :mobile, :name, :nb_castle_nights, :nb_children, :nb_nights, 
-    :nb_people, :nogo, :saturday_lunch, :sunday_lunch, :remark
+    :nb_people, :nogo, :saturday_lunch, :sunday_lunch, :sunday_dinner, :remark
     
   validates :name, uniqueness: true, presence: true
   validates :email, uniqueness: true, presence: true
@@ -90,7 +90,7 @@ class Guest < ActiveRecord::Base
 
   
   def eat?
-    friday_dinner || saturday_lunch
+    friday_dinner || saturday_lunch || sunday_dinner
   end
   
   def eat_display

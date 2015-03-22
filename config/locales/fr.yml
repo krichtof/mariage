@@ -216,6 +216,7 @@ fr:
         friday_dinner: "Dîner le vendredi"
         saturday_lunch: "Déjeuner le samedi"
         sunday_lunch: "Brunch le dimanche"
+        sunday_dinner: "Dîner le dimanche"
   arriving:
     friendly:
       marmande_ven_1738: "en gare de Marmande vendredi à 17h38"
