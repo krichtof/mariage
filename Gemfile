@@ -5,6 +5,7 @@ gem 'rails', '3.2.18'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+
 gem 'pg'
 
 
@@ -42,6 +43,7 @@ group :test, :development do
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
+  gem 'sqlite3'
 end
 
 gem 'simple_form'
