@@ -94,7 +94,7 @@ class Guest < ActiveRecord::Base
   end
   
   def eat_display
-    eat_choices = [:friday_dinner, :saturday_lunch]
+    eat_choices = [:friday_dinner, :saturday_lunch, :sunday_dinner]
     eat_array = []
     for i in eat_choices do
       eat_array.append I18n.t(i, scope: 'activerecord.attributes.guest').downcase if self.send i
