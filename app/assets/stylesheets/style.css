@@ -1167,7 +1167,7 @@ textarea.form_textarea_full{
 	padding:10px 1% 0 1%;
 	font-size:14px;
 }
-input.form_submit_contact{
+.form_submit_contact{
 	color:#fff;
 	border:none;
 	cursor:pointer;
@@ -1271,6 +1271,9 @@ label.error {
 	text-align:left;
 	font-size:12px;
 	font-weight:normal;
+}
+.field_with_errors input {
+    color: red;
 }
 label#loader {
 	width:100%;

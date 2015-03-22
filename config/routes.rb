@@ -1,7 +1,8 @@
 Mariage::Application.routes.draw do
   resources :guests
-
-
+  PagesController.action_methods.each do |action|
+    get "/#{action}", to: "pages##{action}", as: "#{action}_page"
+  end  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -51,7 +52,7 @@ Mariage::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => redirect('/')
 
   # See how all your routes lay out with "rake routes"
 

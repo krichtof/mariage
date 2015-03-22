@@ -45,3 +45,5 @@ group :test, :development do
 end
 
 gem 'simple_form'
+gem 'rest-client'
+# gem 'activeadmin'

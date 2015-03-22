@@ -22,7 +22,7 @@ Feature: Send RSVP
     And I should see "Une voiture viendra vous chercher en gare de Marmande vendredi à 18h"
     And I should see "Cela nous fera plaisir de prolonger le mariage en déjeunant ensemble dimanche"
     And I should see "Une voiture vous ramènera en gare de Marmande pour votre train de 16h"
-    And I should see "Une chambre pour 4 personnes dont 2 adultes vous est réservée (à partir de vendredi). Nous vous indiquerons à votre arrivée au château où se trouve votre chambre"
+    And I should see "Vous allez dormir Une chambre pour 4 personnes dont 2 adultes vous est réservée (à partir de vendredi). Nous vous indiquerons à votre arrivée au château où se trouve votre chambre"
     And I should see "N'hésitez pas à nous appeler si vous avez des questions"
     And I should have 1 rsvp
     

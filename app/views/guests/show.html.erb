@@ -1,0 +1,61 @@
+    <div class="page_header_photo castle_header">
+      <div class="page_header_trans">
+               <div class="page_header_title">
+               <h1>A TRES VITE <%= @guest.name.upcase %> !</h1>
+<p>Love is friendship that has caught fire. It is quiet understanding, sharing and forgiving. <br />
+It is loyalty through good and bad times. It settles for less than perfection<br /> and makes allowances for human weaknesses.
+<br /> <em>"Répondez s'il vous plaît."</em></p>
+               </div>
+       </div>
+   </div>
+
+       <div class="page_content">
+        <div class="full_width_centered">
+
+
+       <div class="left23_first">
+           <h2>Ce qu'il faut retenir...</h2>
+   <p>
+     <p>
+     <%if @guest.mobile.present? %>
+     Vous êtes joignable par téléphone au <%= @guest.mobile %><br/>
+     <% end %>
+     <% if @guest.arriving_by_car? %>
+     Vous venez au château par vos propres moyens.
+     <% else %>
+     Une voiture viendra vous chercher <%= t(@guest.arriving, scope: 'arriving.friendly')%>
+     <% end %><br/>
+     <% if @guest.eat? %>
+       Vous avez réservé une table au château pour <%= @guest.nb_people %> <%= "personne".pluralize(@guest.nb_people) %>
+       <% if (@guest.nb_children) %>
+       (dont <%= @guest.nb_children %> <%= "enfant".pluralize(@guest.nb_children) %>)
+       <% end %>
+     <%= @guest.eat_display %><br/>
+     <% end %>
+     <% if @guest.sunday_lunch %>
+     Cela nous fera plaisir de prolonger le mariage en déjeunant ensemble dimanche.<br/>
+     <% end %>
+     Vous allez dormir <%= @guest.nb_nights %> <%= "nuit".pluralize(@guest.nb_nights) %> au château (nous vous indiquerons à votre arrivée au château où se trouve votre chambre).<br/>
+     <% if @guest.departing_by_car? %>
+     Vous repartez du château par vos propres moyens.<br/> 
+     <% else %>
+     Une voiture vous ramènera 
+     <%= t(@guest.departing, scope: 'departing.friendly') %>.<br/> 
+     <% end %>
+     <% if @guest.remark.present? %>
+     Et enfin, sachez que nous avons bien pris en compte vos observations !
+     <% end %>       
+     </p>
+     
+     <%= link_to edit_guest_path(@guest) do %>
+        <button class="form_submit_contact">Modifier</button>
+     <% end %>
+       </div>  
+
+       <div class="left13_last">
+           <img src="/images/fairepart.jpg">
+       </div>
+
+       </div>
+    </div>
+

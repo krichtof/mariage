@@ -16,3 +16,5 @@
 //= require effects
 //= require jquery.validate.min
 //= require menu
+//= require jquery.arctext
+//= require jquery.countdown

@@ -15,6 +15,7 @@ class CreateGuests < ActiveRecord::Migration
       t.integer :nb_people
       t.integer :nb_children
       t.boolean :nogo
+      t.integer :nb_nights
 
       t.timestamps
     end

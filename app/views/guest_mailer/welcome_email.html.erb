@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    Bonjour <%= @guest.name %>
+    <p>
+      Merci beaucoup d'avoir pris le temps de remplir le formulaire.<br>
+      
+      <h2>Ce qu'il faut retenir...</h2>
+      <p>
+        <p>
+        <%if @guest.mobile.present? %>
+        Vous êtes joignable par téléphone au <%= @guest.mobile %><br/>
+        <% end %>
+        <% if @guest.arriving_by_car? %>
+        Vous venez au château par vos propres moyens.
+        <% else %>
+        Une voiture viendra vous chercher <%= t(@guest.arriving, scope: 'arriving.friendly')%>
+        <% end %><br/>
+        <% if @guest.eat? %>
+          Vous avez réservé une table au château pour <%= @guest.nb_people %> <%= "personne".pluralize(@guest.nb_people) %>
+          <% if (@guest.nb_children) %>
+          (dont <%= @guest.nb_children %> <%= "enfant".pluralize(@guest.nb_children) %>)
+          <% end %>
+        <%= @guest.eat_display %><br/>
+        <% end %>
+        <% if @guest.sunday_lunch %>
+        Cela nous fera plaisir de prolonger le mariage en déjeunant ensemble dimanche.<br/>
+        <% end %>
+        Vous allez dormir <%= @guest.nb_nights %> <%= "nuit".pluralize(@guest.nb_nights) %> au château (nous vous indiquerons à votre arrivée au château où se trouve votre chambre).<br/>
+        <% if @guest.departing_by_car? %>
+        Vous repartez du château par vos propres moyens.<br/> 
+        <% else %>
+        Une voiture vous ramènera 
+        <%= t(@guest.departing, scope: 'departing.friendly') %>.<br/> 
+        <% end %>
+        <% if @guest.remark.present? %>
+        Et enfin, sachez que nous avons bien pris en compte vos observations !
+        <% end %>       
+        </p>
+
+        A noter que vous avez jusqu'au 22 mars pour <%= link_to "modifier ces informations", edit_guest_url(@guest) %>
+        <p>
+          Alexandra et Christophe
+  </body>
+</html>

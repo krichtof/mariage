@@ -30,7 +30,7 @@ background-color:#e9b000; }
 color:#ffd963;}
 
 ul#main_menu li a.selected, ul#main_menu li a:hover, .footer_menu li{
-background:url(../images/menu_bullet_yellow.png) no-repeat left;}
+background:url(/images/menu_bullet_yellow.png) no-repeat left;}
 
 @media screen and (max-width: 680px) {
 nav.menu{background-color:#e9b000;}

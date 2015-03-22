@@ -1,0 +1,242 @@
+---
+fr:
+  date:
+    abbr_day_names:
+    - dim
+    - lun
+    - mar
+    - mer
+    - jeu
+    - ven
+    - sam
+    abbr_month_names:
+    - 
+    - jan.
+    - fév.
+    - mar.
+    - avr.
+    - mai
+    - juin
+    - juil.
+    - août
+    - sept.
+    - oct.
+    - nov.
+    - déc.
+    day_names:
+    - dimanche
+    - lundi
+    - mardi
+    - mercredi
+    - jeudi
+    - vendredi
+    - samedi
+    formats:
+      default: "%d/%m/%Y"
+      short: "%e %b"
+      long: "%e %B %Y"
+    month_names:
+    - 
+    - janvier
+    - février
+    - mars
+    - avril
+    - mai
+    - juin
+    - juillet
+    - août
+    - septembre
+    - octobre
+    - novembre
+    - décembre
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: environ une heure
+        other: environ %{count} heures
+      about_x_months:
+        one: environ un mois
+        other: environ %{count} mois
+      about_x_years:
+        one: environ un an
+        other: environ %{count} ans
+      almost_x_years:
+        one: presqu'un an
+        other: presque %{count} ans
+      half_a_minute: une demi-minute
+      less_than_x_minutes:
+        zero: moins d'une minute
+        one: moins d'une minute
+        other: moins de %{count} minutes
+      less_than_x_seconds:
+        zero: moins d'une seconde
+        one: moins d'une seconde
+        other: moins de %{count} secondes
+      over_x_years:
+        one: plus d'un an
+        other: plus de %{count} ans
+      x_days:
+        one: 1 jour
+        other: "%{count} jours"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_months:
+        one: 1 mois
+        other: "%{count} mois"
+      x_seconds:
+        one: 1 seconde
+        other: "%{count} secondes"
+    prompts:
+      day: Jour
+      hour: Heure
+      minute: Minute
+      month: Mois
+      second: Seconde
+      year: Année
+  errors:
+    format: "Le champ %{attribute} %{message}"
+    messages:
+      accepted: doit être accepté(e)
+      blank: doit être rempli(e)
+      present: doit être vide
+      confirmation: ne concorde pas avec la confirmation
+      empty: doit être rempli(e)
+      equal_to: doit être égal à %{count}
+      even: doit être pair
+      exclusion: n'est pas disponible
+      greater_than: doit être supérieur à %{count}
+      greater_than_or_equal_to: doit être supérieur ou égal à %{count}
+      inclusion: n'est pas inclus(e) dans la liste
+      invalid: n'est pas valide
+      less_than: doit être inférieur à %{count}
+      less_than_or_equal_to: doit être inférieur ou égal à %{count}
+      not_a_number: n'est pas un nombre
+      not_an_integer: doit être un nombre entier
+      odd: doit être impair
+      record_invalid: 'La validation a échoué : %{errors}'
+      restrict_dependent_destroy:
+        one: 'Suppression impossible: un autre enregistrement est lié'
+        many: 'Suppression impossible: d''autres enregistrements sont liés'
+      taken: est déjà pris par un autre invité
+      too_long:
+        one: est trop long (pas plus d'un caractère)
+        other: est trop long (pas plus de %{count} caractères)
+      too_short:
+        one: est trop court (au moins un caractère)
+        other: est trop court (au moins %{count} caractères)
+      wrong_length:
+        one: ne fait pas la bonne longueur (doit comporter un seul caractère)
+        other: ne fait pas la bonne longueur (doit comporter %{count} caractères)
+      other_than: doit être différent de %{count}
+    template:
+      body: 'Veuillez vérifier les champs suivants : '
+      header:
+        one: 'Impossible d''enregistrer ce(tte) %{model} : 1 erreur'
+        other: 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreurs'
+  helpers:
+    select:
+      prompt: Veuillez sélectionner
+    submit:
+      create: Créer un(e) %{model}
+      submit: Enregistrer ce(tte) %{model}
+      update: Modifier ce(tte) %{model}
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "€"
+    format:
+      delimiter: " "
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: milliard
+          million: million
+          quadrillion: million de milliards
+          thousand: millier
+          trillion: billion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: octet
+            other: octets
+          gb: Go
+          kb: ko
+          mb: Mo
+          tb: To
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: " et "
+      two_words_connector: " et "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      default: "%d %B %Y %Hh %Mmin %Ss"
+      long: "%A %d %B %Y %Hh%M"
+      short: "%d %b %Hh%M"
+    pm: pm
+    
+  activerecord:
+    models:
+      guest: "L'invité"
+    attributes:
+      guest:
+        name: "Nom"
+        mobile: "Téléphone"
+        friday_dinner: "Dîner le vendredi"
+        saturday_lunch: "Déjeuner le samedi"
+        sunday_lunch: "Brunch le dimanche"
+  arriving:
+    friendly:
+      marmande_ven_1738: "en gare de Marmande vendredi à 17h38"
+      marmande_ven_1844: "en gare de Marmande vendredi à 18h44"
+      marmande_ven_1940: "en gare de Marmande vendredi à 19h40"
+      marmande_sam_1138: "en gare de Marmande samedi à 11h38"
+      marmande_sam_1350: "en gare de Marmande samedi à 13h50"
+      marmande_sam_1538: "en gare de Marmande samedi à 15h38"
+      bergerac_ven_2220: "à l'aéroport de Bergerac vendredi à 22h20"
+      bergerac_sam_1035: "à l'aéroport de Bergerac samedi à 10h35"
+      car_ven_pm: "en voiture vendredi dans l'après-midi"
+      car_sam_am: "en voiture samedi dans la matinée"
+      car_sam_pm: "en voiture samedi après-midi"
+  departing:
+    friendly: 
+      marmande_dim_0951: "en gare de Marmande dimanche à 9h51"
+      marmande_dim_1121: "en gare de Marmande dimanche à 11h21"
+      marmande_dim_1352: "en gare de Marmande dimanche à 13h52"
+      marmande_dim_1521: "en gare de Marmande dimanche à 15h21"
+      marmande_dim_1721: "en gare de Marmande dimanche à 17h21"
+      bergerac_dim_1755: "à l'aéroport de Bergerac dimanche à 17h55"
+      bergerac_lun_1755: "à l'aéroport de Bergerac lundi à 17h55"
+
+
