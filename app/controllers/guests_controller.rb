@@ -26,7 +26,7 @@ class GuestsController < ApplicationController
   def update
     @guest = Guest.find_by_token(params[:id])
     if @guest.update_attributes(params[:guest])
-      send_welcome_message @guest
+      send_welcome_message @guest if @guest.email.present?
       redirect_to @guest
     else
       render :action => :edit

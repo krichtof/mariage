@@ -4,7 +4,7 @@ class Guest < ActiveRecord::Base
     :nb_people, :nogo, :saturday_lunch, :sunday_lunch, :sunday_dinner, :remark
     
   validates :name, uniqueness: true, presence: true
-  validates :email, uniqueness: true, presence: true
+  validates :email, uniqueness: true, presence: true, unless: :edited_by_admin?
   validates_uniqueness_of :mobile, allow_blank: true
   validates :nb_people, presence: true
   validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
@@ -64,6 +64,10 @@ class Guest < ActiveRecord::Base
     'Par train' => TRAIN_DEPARTURES, 
     'Par avion' => PLANE_DEPARTURES    
   }
+  def edited_by_admin?
+    email == "simon.alexandra@gmail.com"
+  end
+  
   def arriving_by_car?
     !arriving_by_train? && !arriving_by_plane?
   end

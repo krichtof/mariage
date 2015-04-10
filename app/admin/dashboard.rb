@@ -29,5 +29,19 @@ ActiveAdmin.register_page "Dashboard" do
     #     end
     #   end
     # end
+    columns do
+      column do
+        panel "Vendredi (#{Guest.where(friday_dinner: true).count} personnes)" do
+          
+          ul do
+            Guest.where(friday_dinner: true).map do |guest|
+              li link_to(guest.name, admin_guest_path(guest))
+            end
+          end
+        end
+      end
+    end
+            
+        
   end # content
 end
