@@ -1,5 +1,6 @@
 ActiveAdmin.register Guest do
   controller do
+    resources_configuration[:self][:finder] = :find_by_token
     # Overriding resource url helpers so that this admin controller uses the id
     # for urls, rather than the slug (which can have duplicates):
     def resource_path(*given_args)
