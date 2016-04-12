@@ -7,5 +7,5 @@ Mariage::Application.routes.draw do
     get "/#{action}", to: "pages##{action}", as: "#{action}_page"
   end  
 
-  root :to => redirect('/')
+  root :to => "pages#home"
 end
