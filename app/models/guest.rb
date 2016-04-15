@@ -12,12 +12,13 @@ class Guest < ActiveRecord::Base
   before_create :generate_token
   
   TRAIN_ARRIVALS = [
-    ['Marmande vendredi 24 à 17h38', 'marmande_ven_1738'],
-    ['Marmande vendredi 24 à 18h44', 'marmande_ven_1844'],
-    ['Marmande vendredi 24 à 19h40', 'marmande_ven_1940'],
-    ['Marmande samedi 25 à 11h38', 'marmande_sam_1138'],
-    ['Marmande samedi 25 à 13h50', 'marmande_sam_1350'],
-    ['Marmande samedi 25 à 15h38', 'marmande_sam_1538'],
+    ['Marmande vendredi 24 à 17h40', 'marmande_ven_1740'],
+    ['Marmande vendredi 24 à 18h43', 'marmande_ven_1843'],
+    ['Marmande vendredi 24 à 19h23', 'marmande_ven_1923'],
+    ['Marmande vendredi 24 à 19h48', 'marmande_ven_1948'],
+    ['Marmande samedi 25 à 11h39', 'marmande_sam_1139'],
+    ['Marmande samedi 25 à 13h56', 'marmande_sam_1356'],
+    ['Marmande samedi 25 à 15h42', 'marmande_sam_1542'],
   ]
 
   PLANE_ARRIVALS = [
@@ -35,16 +36,16 @@ class Guest < ActiveRecord::Base
   ARRIVALS = {
     'En voiture' => CAR_ARRIVALS,
     'Par train' => TRAIN_ARRIVALS, 
-    'Par avion' => PLANE_ARRIVALS
+#    'Par avion' => PLANE_ARRIVALS
   }  
 
 
   TRAIN_DEPARTURES = [
-    ['Marmande dimanche 26 à 9h51', 'marmande_dim_0951'],
-    ['Marmande dimanche 26 à 11h21', 'marmande_dim_1121'],
+    ['Marmande dimanche 26 à 9h21', 'marmande_dim_0921'],
+    ['Marmande dimanche 26 à 11h13', 'marmande_dim_1113'],
+    ['Marmande dimanche 26 à 11h40', 'marmande_dim_1140'],
     ['Marmande dimanche 26 à 13h52', 'marmande_dim_1352'],
-    ['Marmande dimanche 26 à 15h21', 'marmande_dim_1521'],
-    ['Marmande dimanche 26 à 17h21', 'marmande_dim_1721'],
+    ['Marmande dimanche 26 à 15h18', 'marmande_dim_1518'],
     ]
 
   PLANE_DEPARTURES = [
@@ -62,7 +63,7 @@ class Guest < ActiveRecord::Base
   DEPARTURES = {
     'En voiture' => CAR_DEPARTURES,
     'Par train' => TRAIN_DEPARTURES, 
-    'Par avion' => PLANE_DEPARTURES    
+#    'Par avion' => PLANE_DEPARTURES    
   }
   def edited_by_admin?
     email == "simon.alexandra@gmail.com"
