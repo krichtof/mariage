@@ -16,7 +16,7 @@
 //= require jquery.skippr
 // require effects
 // require jquery.validate.min
-// require menu
+//= require menu
 //= require jquery.arctext
 //= require jquery.countdown
 //= require owl.carousel
