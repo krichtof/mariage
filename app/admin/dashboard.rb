@@ -44,7 +44,7 @@ ActiveAdmin.register_page "Dashboard" do
         Guest::TRAIN_ARRIVALS.each do |train|
           guests = Guest.where(arriving: train[1])
           if guests.any? 
-            panel train[0] do
+            panel "GARE DE MARMANDE : #{train[0]} (#{guests.count})" do
               guests.map do |guest|
                 ul do
                   li link_to(guest.name, admin_guest_path(guest))
@@ -58,7 +58,7 @@ ActiveAdmin.register_page "Dashboard" do
         Guest::CAR_ARRIVALS.each do |car|
           guests = Guest.where(arriving: car[1])
           if guests.any? 
-            panel car[0] do
+            panel "EN VOITURE : #{car[0]} (#{guests.count})" do
               guests.map do |guest|
                 ul do
                   li link_to(guest.name, admin_guest_path(guest))
