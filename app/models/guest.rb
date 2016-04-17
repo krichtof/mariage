@@ -29,7 +29,7 @@ class Guest < ActiveRecord::Base
   CAR_ARRIVALS = [
     ['Arrivée prévue vendredi à partir de 17h', 'car_ven_pm'],
     ['Arrivée prévue samedi matin', 'car_sam_am'],
-    ['Arrivée prévue samedi après-midi avant 16h30', 'car_sam_am'],
+    ['Arrivée prévue samedi après-midi avant 16h30', 'car_sam_pm'],
     
   ]
 
