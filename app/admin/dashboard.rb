@@ -31,7 +31,7 @@ ActiveAdmin.register_page "Dashboard" do
     # end
     columns do
       column do
-        panel "Vendredi (#{Guest.where(friday_dinner: true).sum(:nb_people)} personnes)" do
+        panel "DINER VENDREDI (#{Guest.where(friday_dinner: true).sum(:nb_people)} personnes)" do
           
           ul do
             Guest.where(friday_dinner: true).map do |guest|
@@ -40,6 +40,38 @@ ActiveAdmin.register_page "Dashboard" do
           end
         end
       end
+      column do
+        panel "DEJEUNER SAMEDI (#{Guest.where(saturday_lunch: true).sum(:nb_people)} personnes)" do
+          
+          ul do
+            Guest.where(friday_dinner: true).map do |guest|
+              li link_to(guest.name, admin_guest_path(guest))
+            end
+          end
+        end
+      end
+      column do
+        panel "DEJEUNER DIMANCHE (#{Guest.where(sunday_lunch: true).sum(:nb_people)} personnes)" do
+          
+          ul do
+            Guest.where(friday_dinner: true).map do |guest|
+              li link_to(guest.name, admin_guest_path(guest))
+            end
+          end
+        end
+      end
+      column do
+        panel "DINER DIMANCHE (#{Guest.where(sunday_dinner: true).sum(:nb_people)} personnes)" do
+          
+          ul do
+            Guest.where(friday_dinner: true).map do |guest|
+              li link_to(guest.name, admin_guest_path(guest))
+            end
+          end
+        end
+      end
+    end
+    columns do
       column do
         Guest::TRAIN_ARRIVALS.each do |train|
           guests = Guest.where(arriving: train[1])
@@ -54,10 +86,40 @@ ActiveAdmin.register_page "Dashboard" do
           end
         end
       end
+      Guest::CAR_ARRIVALS.each do |car|
+        guests = Guest.where(arriving: car[1])
+        if guests.any? 
+          column do
+            panel "EN VOITURE : #{car[0]} (#{guests.sum(:nb_people)})" do
+              guests.map do |guest|
+                ul do
+                  li link_to(guest.name, admin_guest_path(guest))
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+    columns do
       column do
-        Guest::CAR_ARRIVALS.each do |car|
-          guests = Guest.where(arriving: car[1])
+        Guest::TRAIN_DEPARTURES.each do |train|
+          guests = Guest.where(departing: train[1])
           if guests.any? 
+            panel "GARE DE MARMANDE : #{train[0]} (#{guests.sum(:nb_people)})" do
+              guests.map do |guest|
+                ul do
+                  li link_to(guest.name, admin_guest_path(guest))
+                end
+              end
+            end
+          end
+        end
+      end
+      Guest::CAR_DEPARTURES.each do |car|
+        guests = Guest.where(departing: car[1])
+        if guests.any? 
+          column do
             panel "EN VOITURE : #{car[0]} (#{guests.sum(:nb_people)})" do
               guests.map do |guest|
                 ul do
