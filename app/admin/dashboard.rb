@@ -44,7 +44,7 @@ ActiveAdmin.register_page "Dashboard" do
         panel "DEJEUNER SAMEDI (#{Guest.where(saturday_lunch: true).sum(:nb_people)} personnes)" do
           
           ul do
-            Guest.where(friday_dinner: true).map do |guest|
+            Guest.where(saturday_lunch: true).map do |guest|
               li link_to(guest.name, admin_guest_path(guest))
             end
           end
@@ -54,7 +54,7 @@ ActiveAdmin.register_page "Dashboard" do
         panel "DEJEUNER DIMANCHE (#{Guest.where(sunday_lunch: true).sum(:nb_people)} personnes)" do
           
           ul do
-            Guest.where(friday_dinner: true).map do |guest|
+            Guest.where(sunday_lunch: true).map do |guest|
               li link_to(guest.name, admin_guest_path(guest))
             end
           end
@@ -64,7 +64,7 @@ ActiveAdmin.register_page "Dashboard" do
         panel "DINER DIMANCHE (#{Guest.where(sunday_dinner: true).sum(:nb_people)} personnes)" do
           
           ul do
-            Guest.where(friday_dinner: true).map do |guest|
+            Guest.where(sunday_dinner: true).map do |guest|
               li link_to(guest.name, admin_guest_path(guest))
             end
           end
