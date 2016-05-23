@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe GuestsController, :type => :controller do
-
+describe GuestsController do
+  it { expect(response).to be_success }
 end

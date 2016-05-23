@@ -1,6 +1,6 @@
 Given /^I have been invited$/ do
 end
 
-When /^I go to (.+)$/ do |page_name|
-  visit page_name
+When /^I go to homepage$/ do
+  visit root_path
 end

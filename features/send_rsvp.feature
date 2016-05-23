@@ -5,7 +5,7 @@ Feature: Send RSVP
   
   Scenario: Create RSVP
     Given I have been invited
-    When I go to root_path
+    When I go to homepage
     And I fill in "arrival" with "friday_marmande_1800"
     And I fill in "friday_dinner" with "no"
     And I fill in "saturday_lunch" with "yes"
